@@ -1,7 +1,9 @@
 <x-guest-layout>
     <x-jet-authentication-card>
+
+        <h2 class="text-center font-medium text-gray-700 mb-4">プレイヤーアカウント登録</h2>
+
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
