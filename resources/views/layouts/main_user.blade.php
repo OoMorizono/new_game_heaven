@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    @include('partial.header')
+    @include('partial.header_user')
     <div class="container">
         @yield('content')
     </div>

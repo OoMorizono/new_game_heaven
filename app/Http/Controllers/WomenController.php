@@ -48,7 +48,7 @@ class WomenController extends Controller
      */
     public function show(Women $women)
     {
-        //
+        return view('womens.show', compact('women'));
     }
 
     /**
@@ -84,6 +84,4 @@ class WomenController extends Controller
     {
         //
     }
-
-    
 }

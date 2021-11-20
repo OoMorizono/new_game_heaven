@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\WomenController;
-
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,16 @@ use \App\Http\Controllers\WomenController;
 Route::get('/', [WomenController::class, 'index'])
     ->name('root');
 
+
+
 Route::resource('womens', App\Http\Controllers\WomenController::class);
+// ->only(show,index)
+
+Route::resource('womens', App\Http\Controllers\WomenController::class);
+// ->Middleware
+
+Route::resource('users', App\Http\Controllers\UserController::class);
+
 
 Route::get('/dashboard', function () {
     return view('welcome');
@@ -36,4 +45,3 @@ Route::get('/dashboard', function () {
 // //  ->except(['create', 'store', 'edit', 'update', 'destroy']);  // こちらでも可
 
 require __DIR__ . '/auth.php';
-

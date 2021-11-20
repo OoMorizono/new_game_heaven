@@ -22,6 +22,8 @@ class CreateWomensTable extends Migration
             $table->rememberToken();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->string('profile')->nullable();
+            $table->foreignId('schedule_id')->nullable();
+
             $table->string('client')->nullable();
             $table->foreignId('skill_id')->nullable();
             $table->foreignId('diary_id')->nullable();
