@@ -108,6 +108,8 @@
                 @endif
 
                 <div>
+                    <div class="font-medium text-base text-gray-800">{{ $user->name }}</div>
+                    <div class="font-medium text-sm text-gray-500">{{ $user->email }}</div>
                 </div>
             </div>
 
@@ -119,23 +121,14 @@
                 </x-jet-responsive-nav-link>
 
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route($prefix . 'logout') }}">
                     @csrf
 
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    this.closest('form').submit();">
+                    <x-jet-responsive-nav-link href="{{ route($prefix . 'logout') }}" onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-jet-responsive-nav-link>
                 </form>
-
-                <!-- Team Management -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                <div class="border-t border-gray-200"></div>
-
-                <div class="block px-4 py-2 text-xs text-gray-400">
-                    {{ __('Manage Team') }}
-                </div>
-
             </div>
         </div>
     </div>

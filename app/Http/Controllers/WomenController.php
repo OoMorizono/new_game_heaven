@@ -15,7 +15,8 @@ class WomenController extends Controller
      */
     public function index()
     {
-        //
+        $womens = Women::all();
+        return view('womens.index', compact('womens'));
     }
 
     /**
@@ -83,4 +84,6 @@ class WomenController extends Controller
     {
         //
     }
+
+    
 }

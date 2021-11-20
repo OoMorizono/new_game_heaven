@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\WomenController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/', [WomenController::class, 'index'])
+    ->name('root');
+
+Route::resource('womens', App\Http\Controllers\WomenController::class);
+
+Route::get('/dashboard', function () {
     return view('welcome');
-})->name('welcome');
+});
+
+
+// Route::resource('womens', WomenController::class)
+//     ->middleware(['auth'])
+//     ->only(['create', 'store', 'edit', 'update', 'destroy']);
+// //  ->except(['index', 'show']);  // こちらでも可
+
+// Route::resource('womens', WomenController::class)
+//     ->only(['index', 'show']);
+// //  ->except(['create', 'store', 'edit', 'update', 'destroy']);  // こちらでも可
 
 require __DIR__ . '/auth.php';
 

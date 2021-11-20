@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\WomenController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Features;
@@ -130,3 +132,5 @@ foreach (config('fortify.users') as $user) {
                 ->name('profile.show');
         });
 }
+
+
