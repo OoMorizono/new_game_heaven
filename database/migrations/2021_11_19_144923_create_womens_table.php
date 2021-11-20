@@ -15,13 +15,14 @@ class CreateWomensTable extends Migration
     {
         Schema::create('womens', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('porfile')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
-            $table->string('client')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('profile')->nullable();
+            $table->string('client')->nullable();
             $table->foreignId('skill_id')->nullable();
             $table->foreignId('diary_id')->nullable();
             $table->string('voice')->nullable();
