@@ -9,6 +9,8 @@ use App\Http\Controllers\StripePaymentsController;
 use App\Http\Controllers\ChargeController;
 use App\Http\Controllers\ChatroomController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
+use App\Http\Controllers\PostController;
+
 
 
 /*
@@ -22,10 +24,9 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 |
 */
 
-
+//最終的にホーム設定するルート
 Route::get('/', [WomenController::class, 'index'])
     ->name('root');
-//最終的にホーム設定するルート
 
 Route::get('/payview', [StripePaymentsController::class, 'index'])
     ->name('index')
@@ -37,7 +38,7 @@ Route::post('/charge', [ChargeController::class, 'charge'])
 
 Route::get('/chatroom', [ChatroomController::class, 'show'])
     ->name('chatroom')
-    
+
     ->middleware('auth:users,womens');
 
 
@@ -61,6 +62,14 @@ Route::get('/dashboard', function () {
 Route::get('/logout', function () {
     return view('logout');
 });
+
+//出品
+Route::resource('posts', PostController::class)
+    ->only(['create', 'store', 'edit', 'update', 'destroy'])
+    ->middleware('auth:womens');
+
+Route::resource('posts', PostController::class)
+    ->only(['show', 'index']);
 
 require __DIR__ . '/auth.php';
 
@@ -92,4 +101,3 @@ require __DIR__ . '/auth.php';
 // Route::resource('womens', WomenController::class)
 //     ->only(['index', 'show']);
 // //  ->except(['create', 'store', 'edit', 'update', 'destroy']);  // こちらでも可
-

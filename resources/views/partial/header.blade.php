@@ -29,6 +29,12 @@
                         class="sr-only">(current)</span></a>
             </li>
         </ul>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link text-secondary" href="{{ route('posts.create') }}">出品<span
+                        class="sr-only">(current)</span></a>
+            </li>
+        </ul>
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
