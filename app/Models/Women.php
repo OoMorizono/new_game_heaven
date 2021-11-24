@@ -18,6 +18,11 @@
         use Notifiable;
         use TwoFactorAuthenticatable;
 
+    public function messages()
+    {
+
+    }
+
         /**
          * The attributes that are mass assignable.
          *

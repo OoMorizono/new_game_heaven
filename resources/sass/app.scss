@@ -6,3 +6,19 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+.square-img{
+    height: 240px;
+    width: 240px;
+    object-fit: cover;
+}
+
+.logo {
+    font-family: 'Russo One';
+}
+
+.rounded {
+    border-radius: 0.25rem !important;
+}

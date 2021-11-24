@@ -17,6 +17,8 @@
     </div>
 </div>
 
+<a class="nav-link text-secondary" href="{{ route('chatroom') }}">チャットを開始<span class="sr-only">(current)</span></a>
+
 <table class="table-bordered mb-5 mt-3">
     <colgroup span="1" style="width:200px;background-color:#efefef;"></colgroup>
     <tbody>
