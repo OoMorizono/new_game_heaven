@@ -49,8 +49,6 @@ Route::post('/add', [ChatroomController::class, 'add'])
 Route::resource('womens', App\Http\Controllers\WomenController::class);
 // ->only(show,index)
 
-Route::resource('womens', App\Http\Controllers\WomenController::class);
-// ->Middleware
 
 Route::resource('users', App\Http\Controllers\UserController::class);
 

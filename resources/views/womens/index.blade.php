@@ -7,8 +7,8 @@
 <div class="slider">
     <img src="http://localhost/storage/event_image/修正リリース記念画像.png" class="img-fluid"
         style="max-width: 100%;, height: auto;" alt="s">
-    <img src="http://localhost/storage/event_image/ゲーム女子.jpeg" class="img-fluid"
-        style="max-width: 100%;, height: auto;" alt="s">
+    <img src="http://localhost/storage/event_image/ゲーム女子.jpeg" class="img-fluid" style="max-width: 100%;, height: auto;"
+        alt="s">
     {{-- <img src="http://localhost/storage/event_image/enakorin_event_ad.png" class="img-fluid"
         style="max-width: 100%;, height: auto;" alt="s">
     <img src="http://localhost/storage/event_image/fix_参戦_伊織もえ.png" class="img-fluid"
@@ -26,4 +26,5 @@
         @endif
     </div>
 </div>
+
 @endsection

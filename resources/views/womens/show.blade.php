@@ -67,5 +67,31 @@
     </div>
 </div>
 
+<div class="container">
+    <h4>ルーム一覧</h4>
+    <div class="row g-2">
+        @foreach ($posts as $post)                            
+        <div class="col-3 border mb-5  shadow">
+            <div class="row">
+                <div class="ml-3">
+                    <div class="mt-3 mb-3">
+                        <img src="{{ $post->image_url }}" class="square-img">
+                        <h3>
+                            {{ $post->title }}
+                        </h3>
+                        <h6 class="text-secondary">
+                            {{ $post->created_at }}
+                        </h6>
+                        <h6 class="text-secondary">
+                            {{ $post->body }}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+
 <a href="{{ route('womens.index') }}">戻る</a>
 @endsection

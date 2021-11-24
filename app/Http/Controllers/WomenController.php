@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreWomenRequest;
 use App\Http\Requests\UpdateWomenRequest;
 use App\Models\Women;
+use App\Http\Requests\PostRequest;
+use App\Models\Post;
 
 class WomenController extends Controller
 {
@@ -16,6 +18,7 @@ class WomenController extends Controller
     public function index()
     {
         $womens = Women::all();
+        // return view('womens.index', compact('womens','posts'));
         return view('womens.index', compact('womens'));
     }
 
@@ -46,9 +49,10 @@ class WomenController extends Controller
      * @param  \App\Models\Women  $women
      * @return \Illuminate\Http\Response
      */
-    public function show(Women $women)
+    public function show(Women $women,)
     {
-        return view('womens.show', compact('women'));
+        $posts = Post::all();
+        return view('womens.show', compact('women','posts'));
     }
 
     /**
