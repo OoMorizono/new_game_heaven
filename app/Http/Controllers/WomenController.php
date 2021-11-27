@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateWomenRequest;
 use App\Models\Women;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
+use App\Models\Comment;
 
 class WomenController extends Controller
 {
@@ -52,7 +53,8 @@ class WomenController extends Controller
     public function show(Women $women,)
     {
         $posts = Post::all();
-        return view('womens.show', compact('women','posts'));
+        $comments = $women->comments()->latest()->get()->load(['user'])->reverse();
+        return view('womens.show', compact('women', 'posts', 'comments'));
     }
 
     /**

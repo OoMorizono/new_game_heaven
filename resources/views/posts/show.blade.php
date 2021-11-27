@@ -4,52 +4,103 @@
 
 @section('content')
 
-<div class="container lg:w-3/4 md:w-4/5 w-11/12 mx-auto my-8 px-8 py-4 bg-white shadow-md">
+<x-flash-message :message="session('notice')" />
 
-    @if (session('notice'))
-    <div class="p-3 mb-2 bg-primary text-white">
-        {{ session('notice') }}
+<x-validation-errors :errors="$errors" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="slider">
+                <img src="{{ $post->image_url }}" alt="" class="rounded square3-img">
+                <img src="{{ $post->image_url }}" alt="" class="rounded square3-img">
+                <img src="{{ $post->image_url }}" alt="" class="rounded square3-img">
+            </div>
+        </div>
+        {{-- 商品詳細 --}}
+        <div class="col-8 rounded">
+            <div class="col-12 bg-white mb-3 rounded">
+                <h3 class="pt-3 font-weight-bold" style="color:#333333;">{{ $post->title }}</h3>
+                <div class="mb-3">
+                    <h6 class="text-secondary">
+                        <span class="">{{ date('Y-m-d H:i:s', strtotime('-1 day')) < $post->
+                                created_at
+                                ?
+                                'NEW'
+                                : '' }}</span>
+                        {{ $post->created_at }}
+                    </h6>
+                </div>
+                <div class="mb-3">
+                    <h3 class="text-danger">¥2,000</h3>
+                </div>
+                <div class="content pb-3 mt-1">
+                    <form action="{{ asset('charge') }}" method="POST">
+                        {{ csrf_field() }}
+                        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="{{ env('STRIPE_KEY') }}" data-amount="1000" data-name="Stripe Demo"
+                            data-label="ルームを購入する" data-description="Online course about integrating Stripe"
+                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                            data-locale="auto" data-currency="JPY">
+                        </script>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 bg-white pb-3 rounded">
+                <h4 class="pt-3 font-weight-bold" style="color:#666666;">商品の説明</h4>
+                <hr>
+                <table class="table-bordered  mt-2">
+                    <div>
+                        
+                    </div>
+                    <colgroup span="1" style="width:200px;background-color:#efefef;"></colgroup>
+                    <tbody class="" style="color:#333333">
+                        <tr>
+                            <th>出品者</th>
+                            <td>{{ $post->women->name }}</td>
+                        </tr>
+                        <tr>
+                            <th>予約日時</th>
+                            <td style="width:510px;">11/21 21:30</td>
+                        </tr>
+                        <tr>
+                            <th>時間</th>
+                            <td style="width:510px;">2時間</td>
+                        </tr>
+                        <tr>
+                            <th>ボイスチャット</th>
+                            <td style="width:510px;">有り</td>
+                        </tr>
+                        <tr>
+                            <th>顔出し</th>
+                            <td style="width:510px;">無し</td>
+                        </tr>
+                        <tr class="">
+                            <th>詳細</th>
+                            <td class="text-wrap">
+                                {{ $post->body }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    @endif
 
-    <x-validation-errors :errors="$errors" />
-
-    <article class="mb-2">
-        <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-1 text-3xl md:text-4xl">{{ $post->title }}
-        </h2>
-        <h3>{{ $post->women->name }}</h3>
-        <p class="text-sm mb-2 md:text-base font-normal text-gray-600">
-            <span class="text-red-400 font-bold">{{ date('Y-m-d H:i:s', strtotime('-1 day')) < $post->created_at ? 'NEW'
-                    : '' }}</span>
-            {{ $post->created_at }}
-        </p>
-        <img src="{{ $post->image_url }}" alt="" class="square-img">
-        <p class="text-gray-700 text-base">{!! nl2br(e($post->body)) !!}</p>
-    </article>
-    <div class="flex flex-row text-center my-4">
-        <button>
-            <a href="{{ route('posts.edit', $post) }}"
-                class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-20 mr-2">編集</a>
-        </button>
-        <form action="{{ route('posts.destroy', $post) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <input type="submit" value="削除" onclick="if(!confirm('削除しますか？')){return false};"
-                class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-20">
-        </form>
-        {{-- @can('update', $post)
-        <a href="{{ route('posts.edit', $post) }}"
-            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-20 mr-2">編集</a>
-        @endcan
-        @can('delete', $post)
-        <form action="{{ route('posts.destroy', $post) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <input type="submit" value="削除" onclick="if(!confirm('削除しますか？')){return false};"
-                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-20">
-        </form>
-        @endcan --}}
+    <div class="container">
+        <div class="row">
+                <button class="" style="background-color:#efefef;">
+                    <a href="{{ route('posts.edit', $post) }}"
+                        class="" style="color:#8c94aa;">編集</a>
+                </button>
+                <form action="{{ route('posts.destroy', $post) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="削除" onclick="if(!confirm('削除しますか？')){return false};"
+                        class="" style="background-color:#efefef; color:#8c94aa;">
+                </form>
+        </div>
     </div>
-</div>
-
-@endsection
+    
+    @endsection

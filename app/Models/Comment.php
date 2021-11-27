@@ -10,10 +10,16 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'login_id', 'name', 'comment'
+        'body',
     ];
 
-    protected $guarded = [
-        'create_at', 'update_at'
-    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function women()
+    {
+        return $this->belongsTo(Women::class);
+    }
 }

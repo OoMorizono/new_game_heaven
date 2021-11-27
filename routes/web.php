@@ -10,6 +10,8 @@ use App\Http\Controllers\ChargeController;
 use App\Http\Controllers\ChatroomController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+
 
 
 
@@ -36,16 +38,6 @@ Route::post('/charge', [ChargeController::class, 'charge'])
     ->name('charge')
     ->middleware('auth:users,womens');
 
-Route::get('/chatroom', [ChatroomController::class, 'show'])
-    ->name('chatroom')
-
-    ->middleware('auth:users,womens');
-
-
-Route::post('/add', [ChatroomController::class, 'add'])
-    ->name('add')
-    ->middleware('auth:users,womens');
-
 Route::resource('womens', App\Http\Controllers\WomenController::class);
 // ->only(show,index)
 
@@ -68,6 +60,10 @@ Route::resource('posts', PostController::class)
 
 Route::resource('posts', PostController::class)
     ->only(['show', 'index']);
+
+Route::resource('womens.comments', CommentController::class)
+    ->only(['create', 'store', 'edit', 'update', 'destroy'])
+    ->middleware('auth:users,womens');
 
 require __DIR__ . '/auth.php';
 

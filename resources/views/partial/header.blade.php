@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow border-b border-gray-100 mb-3">
-    <a class="navbar-brand logo text-danger"  href="{{ route('womens.index') }}">GameHeaven</a>
+    <a class="navbar-brand logo text-danger" href="{{ route('womens.index') }}">GameHeaven</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link text-secondary" href="{{ route('womens.index') }}">Woman女の子と一緒にゲームをしよう<span
+                <a class="nav-link text-secondary" href="{{ route('womens.index') }}">女の子と一緒にゲームをしよう<span
                         class="sr-only">(current)</span></a>
             </li>
         </ul>
@@ -25,30 +25,21 @@
         </ul>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link text-secondary" href="{{ route('chatroom') }}">チャット<span
-                        class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
                 <a class="nav-link text-secondary" href="{{ route('posts.create') }}">出品<span
                         class="sr-only">(current)</span></a>
             </li>
         </ul>
-
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <div class="content">
-                    <form action="{{ asset('charge') }}" method="POST">
-                        {{ csrf_field() }}
-                        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ env('STRIPE_KEY') }}"
-                            data-amount="1000" data-name="Stripe Demo" data-label="コインを購入する"
-                            data-description="Online course about integrating Stripe"
-                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
-                            data-currency="JPY">
-                        </script>
-                    </form>
-                </div>
+                <form action="{{ asset('charge') }}" method="POST">
+                    {{ csrf_field() }}
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="{{ env('STRIPE_KEY') }}" data-amount="1000" data-name="Stripe Demo"
+                        data-label="コインを購入する" data-description="Online course about integrating Stripe"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
+                        data-currency="JPY">
+                    </script>
+                </form>
             </li>
         </ul>
 

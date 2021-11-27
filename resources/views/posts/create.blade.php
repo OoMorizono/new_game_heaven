@@ -4,39 +4,52 @@
 
 @section('content')
 
-<div class="container lg:w-1/2 md:w-4/5 w-11/12 mx-auto mt-8 px-8 bg-white shadow-md">
-    <h2 class="text-center text-lg font-bold pt-6 tracking-widest">出品</h2>
 
-    <x-validation-errors :errors="$errors" />
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 bg-white shadow text-center">
+            <h4 class="my-3">商品ルーム情報を入力</h4>
+            <x-validation-errors :errors="$errors" />
+            <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data" class="">
+                @csrf
+        </div>
+        <div class="col-3"></div>
 
-    <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data"
-        class="rounded pt-3 pb-8 mb-4">
-        @csrf
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm mb-2" for="title">
-                タイトル
-            </label>
-            <input type="text" name="title"
-                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                required placeholder="タイトル" value="{{ old('title') }}">
-        </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm mb-2" for="body">
-                本文
-            </label>
-            <textarea name="body" rows="10"
-                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3"
-                required>{{ old('body') }}</textarea>
-        </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm mb-2" for="image">
+        <div class="col-3"></div>
+        <div class="col-6 bg-light text-center">
+            <img src="http://localhost/storage/event_image/カメラ.png" class="rounded option5-img" alt="">
+            <label class="" for="image">
                 商品画像を選択
             </label>
-            <input type="file" name="image" class="border-gray-300">
+            <input type="file" name="image" class="">
         </div>
-        <input type="submit" value="登録"
-            class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-    </form>
+        <div class="col-3"></div>
+
+        <div class="col-3"></div>
+        <div class="col-6 bg-white shadow">
+            <div class="">
+                <label class="ml-2 my-3" for="title">
+                    タイトル
+                </label>
+            </div>
+            <input type="text" name="title" class="ml-2" style="width:510px;" required placeholder="タイトルを入力してください"
+                value="{{ old('title') }}">
+            <div class="">
+                <div>
+                    <label class="ml-2 mb-3 mt-4" for="body">
+                        商品説明
+                    </label>
+                </div>
+                <textarea name="body" rows="10" style="width:510px;" class="ml-2" required>{{ old('body') }} </textarea>
+            </div>
+            <input type="submit" value="登録" class="mt-2 mb-3 float-right">
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="col-3"></div>
+</div>
 </div>
 
 
