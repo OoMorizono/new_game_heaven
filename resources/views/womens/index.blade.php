@@ -33,7 +33,7 @@
             <a href="#">
                 <img src="http://localhost/storage/event_image/valorant_room.jpeg" class="rounded skill2-img" alt="">
             </a>
-            <a href="#" style="color: #333333">
+            <a href="#" class="text-wrap" style="color: #333333">
                 VALORANT
             </a>
         </div>

@@ -12,7 +12,7 @@
                 <img src="{{ url($women->profile_photo_url) }}" class="ml-2 mt-2 icon-img rounded-circle">
             </a>
         </div>
-        <div class="col-2 mt-2">
+        <div class="col-2 mt-2 test7">
             <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
                 <h4 class="ml-1 font-weight-bold" style="color:#333333">{{ $women->name }}</h4>
             </a>
@@ -22,7 +22,7 @@
         <div class="col-7"> </div>
         <div class="col-2 my-auto">
             <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
-                <img src="http://localhost/storage/event_image/フォロー.png" class="option-img" alt="">
+                <img src="http://localhost/storage/event_image/フォローボタン.png" class="option-img" alt="">
             </a>
         </div>
     </div>

@@ -44,6 +44,15 @@
   box-sizing: border-box;
 }
 
+@media (max-width:767px) {
+  *,
+*::before,
+*::after {
+  box-sizing:content-box;
+}
+ }
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -382,7 +391,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .lead {
@@ -10028,6 +10037,16 @@ h3 {
      object-fit: cover;
 }
 
+@media (max-width:767px) {
+  .square-img {
+      height: 100px;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+   }
+}
+
+
 .square2-img {
   height: 168px;
   width: 168px;
@@ -10069,6 +10088,17 @@ h3 {
      object-fit: cover;
 }
 
+@media (max-width:767px) { 
+  .skill2-img {
+  height: 55px;
+  width: 55px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+ }
+
+
+
 .blog-img {
   height: 190px;
   width: 190px;
@@ -10094,6 +10124,16 @@ h3 {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+@media (max-width:767px) { 
+  .option3-img {
+  height: 30px;
+  width: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+}
+
 .option4-img {
   height: 40px;
   width: 90px;
@@ -10148,6 +10188,9 @@ h3 {
     text-indent: -9999px;
     z-index: 9999;
 }
+
+
+
 
 .stripe-button-el span {
     display: block;
@@ -10218,3 +10261,88 @@ h3 {
     user-select: none;
     cursor: pointer;
 }
+
+.test5 {
+  width: 1062px;
+}
+
+@media (max-width:767px) { 
+
+  .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+      width: auto;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+ }
+
+@media (max-width:767px) { 
+ body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f8fafc;
+}
+/* インデックスの説明文 */
+ .test {
+   display: none;
+ }
+ /* idexのプロフィール説明 */
+ .test2 {
+      font-size: 0.6rem;
+}
+/* indexのボイスボタン */
+ .test3 {
+display: none;
+}
+ .test5 {
+width: 338px;
+}
+
+.ml-3, .mx-3 {
+    margin-left: 0.79rem !important;
+}
+.test4  *, *::before, *::after {
+    box-sizing: border-box;
+}
+*, *::before, *::after, .test6 {
+    box-sizing: content-box;
+}
+
+.option-img {
+    height: 60px;
+    width: auto;
+    -o-object-fit: cover;
+    padding-right: 30px;
+}
+.col-2 {
+    flex: 40.66666667%;
+    max-width: 30.66666667%;
+}
+.option-img {
+    height: 60px;
+    width: auto;
+    -o-object-fit: cover;
+    padding-right: 30px;
+}
+
+.mt-2, .my-2  {
+      margin-top: 0.5rem !important;
+    margin-left: 30px;
+}
+
+.square3-img {
+  height: 70px;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+}
+
+
