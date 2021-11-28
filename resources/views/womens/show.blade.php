@@ -21,7 +21,7 @@
         </div>
         <div class="col-7"> </div>
         <div class="col-2 my-auto">
-            <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
+            <a href="#" class="text-dark">
                 <img src="http://localhost/storage/event_image/フォローボタン.png" class="option-img" alt="">
             </a>
         </div>
@@ -34,22 +34,22 @@
         {{-- プロフィール画像 --}}
         <div class="col-2 mt-2">
             <div class="slider">
-                <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
-                    <img src="{{ url($women->profile_photo_url) }}" class="rounded icon2-img ">
+                <a href="{{ route('womens.show', $women->id) }}" class="square4-img text-dark">
+                    <img src="{{ url($women->profile_photo_url) }}" class="rounded square4-img ">
                 </a>
                 <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
-                    <img src="{{ url($women->profile_photo_url) }}" class="rounded icon2-img ">
+                    <img src="{{ url($women->profile_photo_url) }}" class="rounded square4-img">
                 </a>
                 <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
-                    <img src="{{ url($women->profile_photo_url) }}" class="rounded icon2-img ">
+                    <img src="{{ url($women->profile_photo_url) }}" class="rounded square4-img ">
                 </a>
             </div>
             {{-- ボイス --}}
-            <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
+            <a href="#" class=" text-dark">
                 <img src="http://localhost/storage/event_image/ボイス2.png" class="ml-0 option2-img" alt="">
             </a>
             {{-- 対応ジャンル --}}
-            <div class="bg-white mt-2 col-12 rounded pt-2 text-center ">
+            <div class="bg-white mt-2 col-12 rounded pt-2 text-center test3">
                 <h6 class="" style="color: #333333">対応ジャンル</h6>
                 <div class="bt-white shadow mb-2 rounded">
                     <div class="container">
@@ -61,7 +61,7 @@
                                 </a>
                             </div>
                             <div class="text-truncate d-flex align-items-center col-6 ml-0  pl-0">
-                                <a href="{{ route('womens.show', $women->id) }}"style="color: #333333" >
+                                <a href="{{ route('womens.show', $women->id) }}" style="color: #333333">
                                     APEX
                                 </a>
                             </div>
@@ -146,7 +146,8 @@
                         <a href="#" class="" style="color: #333333">口コミ</a>
                     </th>
                     <td>
-                        <a href="#" class=""style="color: #333333">口コミ(112件):★★★★☆/ 初対面とは思えないほど､安心して一緒にゲームが出来ました!気になってる方はぜひ! </a>
+                        <a href="#" class="" style="color: #333333">口コミ(112件):★★★★☆/
+                            初対面とは思えないほど､安心して一緒にゲームが出来ました!気になってる方はぜひ! </a>
                     </td>
                     </tr>
                     <tr>
@@ -159,41 +160,41 @@
                             {{ $women->profile }}
                         </td>
                     </tr>
-                    <tr>
-                        <th>写メ日記</th>
-                        <td>
-                            <div class="col-4 pt-5">
-                                <a href="{{ route('womens.show', $women->id) }}" class="text-dark">
-                                    <ul class="slider ">
-                                        <li>
+                    <tr class="test3">
+                        <th class="test3">写メ日記</th>
+                        <td class="test3">
+                            <div class="col-4 pt-5 test3">
+                                <a href="{{ route('womens.show', $women->id) }}" class="test3 text-dark">
+                                    <ul class="slider test3">
+                                        <li class="test3">
                                             <div class="pl-2  bg-info text-white">
                                                 初投稿😆
                                             </div>
-                                            <img src="http://localhost/storage/event_image/あつもり.jpeg" class="blog-img"
+                                            <img src="http://localhost/storage/event_image/あつもり.jpeg" class=" blog-img"
                                                 alt="">昨日は沢山の...
                                         </li>
-                                        <li>
+                                        <li class="test3">
                                             <div class="pl-2 bg-info text-white">
-                                                お礼😊
+                                                昨日のお礼😊
                                             </div>
                                             <img src="http://localhost/storage/event_image/お礼.jpeg" class="blog-img"
                                                 alt="">昨日は本当に...
                                         </li>
-                                        <li>
+                                        <li class="test3">
                                             <div class="pl-2 bg-info text-white">
                                                 朝ごはん
                                             </div>
                                             <img src="http://localhost/storage/event_image/朝ごはん.jpeg" class="blog-img"
                                                 alt="">今日の朝ごは...
                                         </li>
-                                        <li>
+                                        <li class="test3">
                                             <div class="pl-2 bg-info text-white">
                                                 apex!
                                             </div>
                                             <img src="http://localhost/storage/event_image/チャンピョン.jpeg" class="blog-img"
                                                 alt="">初ソロチャン...
                                         </li>
-                                        <li>
+                                        <li class="test3">
                                             <div class="pl-2 bg-info text-white">
                                                 かっこよすぎる
                                             </div>
@@ -246,7 +247,7 @@
 
 {{-- 出品ルーム一覧 --}}
 <div class="container bg-white mb-2 rounded">
-    <h5 class="ml-2 pt-3 pb-3 font-weight-bold" style="color: #666666" >
+    <h5 class="ml-2 pt-3 pb-3 font-weight-bold" style="color: #666666">
         出品ルーム一覧
     </h5>
     <hr class="ml-2 mr-2">
@@ -261,16 +262,17 @@
                                 <img class="card-img square-img" src="{{ $post->image_url }}" alt="">
                             </a>
                             <div class="card-img-overlay">
-                                <img src="http://localhost/storage/event_image/値段4.png" class="option4-img" alt="">
+                                <img src="http://localhost/storage/event_image/値段2.png" class="option4-img test3"
+                                    alt="">
                             </div>
                         </div>
                         <h4 class="font-weight-bold" style="color: #333333">
                             {{ $post->title }}
                         </h4>
-                        <h6 class="text-secondary" style="color: #666666">
+                        <h6 class="text-secondary test3" style="color: #666666">
                             {{ $post->created_at }}
                         </h6>
-                        <h6 class="text-secondary" style="color: #666666">
+                        <h6 class="text-secondary test3" style="color: #666666">
                             {{ $post->body }}
                         </h6>
                     </div>

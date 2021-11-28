@@ -7,10 +7,16 @@
 <div class="slider">
     {{-- <img src="http://localhost/storage/event_image/修正リリース記念画像.png" class="img-fluid"
         style="max-width: 100%;, height: 200px;" alt="s"> --}}
-    <img src="http://localhost/storage/event_image/index_top.png" class="img-fluid" style="max-width: 100%;, height: auto;"
-        alt="s">
-    {{-- <img src="http://localhost/storage/event_image/ゲーム女子.jpeg" class="img-fluid" style="max-width: 100%;, height: auto;"
-        alt="s"> --}}
+    <img src="http://localhost/storage/event_image/index_top.png" class="img-fluid"
+        style="max-width: 100%;, height: auto;" alt="s">
+    <img src="http://localhost/storage/event_image/index_top.png" class="img-fluid"
+        style="max-width: 100%;, height: auto;" alt="s">
+    <img src="http://localhost/storage/event_image/index_top.png" class="img-fluid"
+        style="max-width: 100%;, height: auto;" alt="s">
+    {{-- <img src="http://localhost/storage/event_image/index_top.png" class="img-fluid"
+        style="max-width: 100%;, height: auto;" alt="s"> --}}
+    {{-- <img src="http://localhost/storage/event_image/ゲーム女子.jpeg" class="img-fluid"
+        style="max-width: 100%;, height: auto;" alt="s"> --}}
     {{-- <img src="http://localhost/storage/event_image/enakorin_event_ad.png" class="img-fluid"
         style="max-width: 100%;, height: auto;" alt="s">
     <img src="http://localhost/storage/event_image/fix_参戦_伊織もえ.png" class="img-fluid"
@@ -124,8 +130,9 @@
     <br>
 </div>
 
-{{-- プレイヤー一蘭 --}}
+{{-- おすすめプレイヤー --}}
 <div class="container">
+    <h5 style="color: #333333" class="font-weight-bold">おすすめプレイヤー</h5>
     <div class="row g-2 ">
         @if (!empty($womens))
         @foreach ($womens as $women)
@@ -135,6 +142,46 @@
         @endforeach
         @endif
     </div>
+    <a href="#">
+        <p class="mt-2 text-secondary float-right">もっと見る</p>
+    </a>
 </div>
+<br>
+
+{{-- APEX --}}
+<div class="container mt-3">
+    <h5 style="color: #333333" class="font-weight-bold">APEXプレイヤー</h5>
+    <div class="row g-2 ">
+        @if (!empty($womens))
+        @foreach ($womens as $women)
+        <div class="col-3 border mb-5 rounded shadow">
+            @include('partial.women')
+        </div>
+        @endforeach
+        @endif
+    </div>
+    <a href="#">
+        <p class="mt-2 text-secondary float-right">もっと見る</p>
+    </a>
+</div>
+<br>
+
+{{-- 新規プレイヤー --}}
+<div class="container">
+    <h5 style="color: #333333" class="font-weight-bold">新規プレイヤー</h5>
+    <div class="row g-2 ">
+        @if (!empty($womens))
+        @foreach ($womens as $women)
+        <div class="col-3 border mb-5 rounded shadow">
+            @include('partial.women')
+        </div>
+        @endforeach
+        @endif
+    </div>
+    <a href="#">
+        <p class="mt-2 text-secondary float-right">もっと見る</p>
+    </a>
+</div>
+<br>
 
 @endsection

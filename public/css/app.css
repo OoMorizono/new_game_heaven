@@ -10060,6 +10060,13 @@ h3 {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.square4-img {
+  height: 170px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .icon-img {
   height: 70px;
   width: 70px;
@@ -10119,8 +10126,8 @@ h3 {
      object-fit: cover;
 }
 .option3-img {
-  height: 40px;
-  width: 90px;
+  height: 47px;
+  width: 70;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -10342,7 +10349,21 @@ width: 338px;
   -o-object-fit: cover;
      object-fit: cover;
 }
+* {
+	float: none;
+	position: static;
+}
+ 
+.pro {
+display: none;
+}
 
+.square4-img {
+  height: 70px !important;
+  width: 100%;
+  -o-object-fit: cover;
+    object-fit: cover;
+}
 }
 
 
