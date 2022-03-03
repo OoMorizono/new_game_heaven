@@ -13,8 +13,6 @@
         style="max-width: 100%;, height: auto;" alt="s">
     <img src="http://localhost/storage/event_image/index_top.png" class="img-fluid"
         style="max-width: 100%;, height: auto;" alt="s">
-    {{-- <img src="http://localhost/storage/event_image/index_top.png" class="img-fluid"
-        style="max-width: 100%;, height: auto;" alt="s"> --}}
     {{-- <img src="http://localhost/storage/event_image/ゲーム女子.jpeg" class="img-fluid"
         style="max-width: 100%;, height: auto;" alt="s"> --}}
     {{-- <img src="http://localhost/storage/event_image/enakorin_event_ad.png" class="img-fluid"

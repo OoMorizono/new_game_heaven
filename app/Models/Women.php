@@ -75,4 +75,10 @@ class Women extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

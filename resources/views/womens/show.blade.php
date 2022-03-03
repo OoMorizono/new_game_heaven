@@ -164,6 +164,7 @@
                         <th class="test3">写メ日記</th>
                         <td class="test3">
                             <div class="col-4 pt-5 test3">
+                                {{-- テスト用ブログ --}}
                                 <a href="{{ route('womens.show', $women->id) }}" class="test3 text-dark">
                                     <ul class="slider test3">
                                         <li class="test3">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\WomenController;
 use \App\Http\Controllers\CalendarController;
@@ -64,6 +65,13 @@ Route::resource('posts', PostController::class)
 Route::resource('womens.comments', CommentController::class)
     ->only(['create', 'store', 'edit', 'update', 'destroy'])
     ->middleware('auth:users,womens');
+
+Route::resource('blogs', BlogController::class)
+    ->only(['create', 'store', 'edit', 'update', 'destroy'])
+    ->middleware('auth:womens');
+
+Route::resource('blogs', BlogController::class)
+    ->only(['show', 'index']);
 
 require __DIR__ . '/auth.php';
 
